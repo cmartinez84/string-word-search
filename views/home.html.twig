@@ -7,6 +7,7 @@
     <body>
         <div class="container">
             <div class="well">
+                <p>Find out how many times a word occurs in a given phrase. You may enter your own phrase, or preselect from a list of famous passages</p>
                 <form class="" action="/result" method="post">
                     <label for="">Phrase:</label>
                     <input type="text" name="input_phrase" value="">
@@ -14,12 +15,13 @@
                     <input type="text" name="input_word" value="">
                     <button type="submit" name="button">Search</button>
                 </form>
+                {% if result%}
+                <div class="results">
+                    <p>The word {{result.word}} occurs {{result.frequency}} time{{result.plural}} in the phrase "{{result.phrase}}""</p>
+                </div>
+                {% endif %}
             </div>
         </div>
-        {% if result%}
-        <div class="results">
-            <p>The word {{result.word}} occurs {{result.frequency}} time{{result.plural}} in the phrase "{{result.phrase}}""</p>
-        </div>
-        {% endif %}
+
     </body>
 </html>
