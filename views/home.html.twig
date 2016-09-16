@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Word Frequency</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="well">
+                <form class="" action="index.html" method="post">
+                    <label for="">Phrase:</label>
+                    <input type="text" name="input_phrase" value="">
+                    <label for="">Word:</label>
+                    <input type="text" name="input_word" value="">
+                    <button type="submit" name="button">Search</button>
+                </form>
+            </div>
+        </div>
+        {% if result%}
+        <div class="results">
+            <p>The word{{result.input_word}} occurs {{result.frequency}} time{{result.plural}} in the phrase {{result.input_phrase}}</p>
+        </div>
+        {% endif %}
+    </body>
+</html>
