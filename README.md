@@ -16,8 +16,10 @@ _This page will search for word frequency._
 |identify a word regardless of capitalization |phrase: "And so we beat on" word: "and"|1|
 |if a word is part of another word, it will not return a match| phrase: "andy williams" word:"and"| 0|
 |ignore punctuation when making matches|phrase: "Yo! I ordered a latte!" word: "Yo"| 1|
+|contains sample inputs with famous passages |ex: obama's second Inagural address word: "the"|103|;
 
-
+divide word up into an array of words.
+for each loop, create associateive array
 
 
 ## Setup/Installation Requirements

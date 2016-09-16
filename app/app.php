@@ -23,7 +23,7 @@
         $newData = new Data;
         $input = $newData->getData($_POST['input_phrase']);
         $newRepeatCounter->CountRepeats($input, $_POST['input_word']);
-        return $app['twig']->render('home.html.twig', array('result' => $newRepeatCounter));
+        return $app['twig']->render('home.html.twig', array('result' => $newRepeatCounter, 'phraseDisplay'=> $newData->phraseDisplay));
     });
     return $app;
 ?>

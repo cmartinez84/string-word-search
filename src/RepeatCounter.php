@@ -38,5 +38,19 @@
         function getplural(){
             return $this->plural;
         }
+        function countAllWords($phrase){
+            $eachWordOnce = array();
+            $phrase = strtolower(strtr($phrase,".,:;?!-\'\"$%@#^*({})][]\\/<> +=_", "                                "));
+            $wordArray = explode(" ", $phrase);
+            foreach ($wordArray as $phraseWord) {
+                if(array_key_exists($phraseWord, $eachWordOnce)==false){
+                    $eachWordOnce[$phraseWord] = "1";
+                }
+                elseif(array_key_exists($phraseWord, $eachWordOnce) == true){
+                    $eachWordOnce[$phraseWord] += "1";
+                }
+            }
+            return $eachWordOnce["and"];
+        }
     }
  ?>
