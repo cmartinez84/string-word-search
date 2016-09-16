@@ -50,6 +50,7 @@
                     $eachWordOnce[$phraseWord] += "1";
                 }
             }
+            arsort($eachWordOnce);
             return $eachWordOnce;
         }
     }
