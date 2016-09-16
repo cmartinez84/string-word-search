@@ -2,6 +2,7 @@
     class RepeatCounter
     {
         function CountRepeats($phrase, $input_word){
+            $phrase = strtr($phrase,".,:;?!-\'\"$%@#^*({})][]\\/<> +=_", "                                ");
             $phrase = strtolower($phrase);
             $input_word = strtolower($input_word);
             $result = 0;

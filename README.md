@@ -15,7 +15,8 @@ _This page will search for word frequency._
 |identify a word in a phrase| phrase: "bennie and the jets" word: "and"|1|
 |identify a word regardless of capitalization |phrase: "And so we beat on" word: "and"|1|
 |if a word is part of another word, it will not return a match| phrase: "andy williams" word:"and"| 0|
-|count all matches in a string and display result| phrase: "fish and chips and chips" word: "and"| 2|
+|ignore punctuation when making matches|phrase: "Yo! I ordered a latte!" word: "Yo"| 1|
+
 
 
 

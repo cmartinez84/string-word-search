@@ -40,6 +40,15 @@
 
            $this->assertEquals(0, $result);
        }
+       function test_countRepeats_ignore_ignore_special_characters(){
+           $test_countRepeats = new RepeatCounter;
+           $phrase = "Fish.,:;?!-\'\"$%@#^*({})][]\\/<> +=_and chips";
+           $input_word = "and";
+
+           $result = $test_countRepeats->CountRepeats($phrase, $input_word);
+
+           $this->assertEquals(1, $result);
+       }
 
    }
  ?>
