@@ -1,6 +1,7 @@
 <?php
     class Data
     {
+        public $phraseDisplay;
         public $option1 = "
             To be, or not to be: that is the question:
             Whether ’tis nobler in the mind to suffer
@@ -121,15 +122,19 @@
             Which is the bliss of solitude;
             And then my heart with pleasure fills,
             And dances with the daffodils. ";
-        public $titlesArray = array("option1"=>"Hamlet's soliliquy", "option2"=> "Obama's second Inagural Address", "option3"=>"Jack Nicholson's famous 'You Can't Handle the Truth' monologue", "option4" => "Woodsworth's poem'I Wandered Lonely as a cloud'");
+        public $titlesArray = array("option1"=>"Hamlet's Soliliquy", "option2"=> "Obama's second Inagural Address", "option3"=>"Jack Nicholson's famous 'You Can't Handle the Truth' monologue", "option4" => "Woodsworth's poem'I Wandered Lonely as a cloud'");
         function getData($phrase){
+            echo $phrase;
             if(substr($phrase, 0, 6)=="option"){
-                return $this->titlesArray[$phrase];
+                // $this->phraseDisplay = $this->titlesArray[$phrase];
+
+                return $this->$phrase;
             }
             else{
-                return "in the phrase \"" . $phrase."\"" ;
+                $this->phraseDisplay = "the phrase \"" . $phrase. "\"";
+                return $phrase ;
             }
-
         }
+
     }
  ?>

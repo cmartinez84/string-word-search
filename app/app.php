@@ -27,4 +27,3 @@
     });
     return $app;
 ?>
-Contact GitHub API Training Shop Blog About

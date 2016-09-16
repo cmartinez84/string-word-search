@@ -12,6 +12,6 @@
         <title></title>
     </head>
     <body>
-
+<?php var_dump($newRepeatCounter) ?>
     </body>
 </html>

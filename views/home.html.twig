@@ -7,17 +7,29 @@
     <body>
         <div class="container">
             <div class="well">
+                <h1>Word Frequeny</h1>
                 <p>Find out how many times a word occurs in a given phrase. You may enter your own phrase, or preselect from a list of famous passages</p>
                 <form class="" action="/result" method="post">
-                    <label for="">Phrase:</label>
-                    <input type="text" name="input_phrase" value="">
                     <label for="">Word:</label>
-                    <input type="text" name="input_word" value="">
+                    <input type="text" name="input_word">
+
+                    <div class="form-group">
+                        <label for="">Phrase:</label>
+                        <input type="text" name="input_phrase" placeholder="Enter Your Own Phrase">
+                        <label for="">Or Choose from the following:</label>
+                        <input type="radio" name="input_phrase" value="option">Hamlet's Soliliquy</input>
+                        <input type="radio" name="input_phrase" value="option2">Obama's Second Inaugural Address</input>
+                        <input type="radio" name="input_phrase" value="option3">"You can't handle the truth" speech</input>
+                        <input type="radio" name="input_phrase" value="option4">"I Wandered Lonely as a Cloud"-Wordsworth</input>
+                        <!-- <label for="">Or Enter Your Own Phrase:</label> -->
+
+                    </div>
+
                     <button type="submit" name="button">Search</button>
                 </form>
                 {% if result%}
                 <div class="results">
-                    <p>The word {{result.word}} occurs {{result.frequency}} time{{result.plural}} in the phrase "{{result.phrase}}""</p>
+                    <p>The word {{result.word}} occurs {{result.frequency}} time{{result.plural}} in {{result.phrase}}</p>
                 </div>
                 {% endif %}
             </div>
