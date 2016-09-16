@@ -31,6 +31,15 @@
 
            $this->assertEquals(1, $result);
        }
+       function test_countRepeats_ignore_partial_matches(){
+           $test_countRepeats = new RepeatCounter;
+           $phrase = "Andy Williams";
+           $input_word = "and";
+
+           $result = $test_countRepeats->CountRepeats($phrase, $input_word);
+
+           $this->assertEquals(0, $result);
+       }
 
    }
  ?>
