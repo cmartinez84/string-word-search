@@ -53,9 +53,11 @@
            $test_countAllWords = new RepeatCounter;
            $phrase = "and and and the the the";
 
-           $result = $test_countAllWords->countAllWords($phrase);
+           $allWordsArray = $test_countAllWords->countAllWords($phrase);
+           $result = $allWordsArray["and"];
 
-           $this->assertEquals(3, $result);
+
+           $this->assertEquals(3 , $result);
        }
 
    }

@@ -24,6 +24,13 @@
                     </div>
                     <button type="submit" name="button">Search</button>
                 </form>
+                <form class="" action="/countAll" method="post">
+                    <input type="radio" name="phrase" value="option">Hamlet's Soliliquy</input>
+                    <input type="radio" name="phrase" value="option2">Obama's Second Inaugural Address</input>
+                    <input type="radio" name="phrase" value="option3">"You can't handle the truth" speech</input>
+                    <input type="radio" name="phrase" value="option4">"I Wandered Lonely as a Cloud"-Wordsworth</input>
+                    <button type="submit" name="button">Count em All</button>
+                </form>
                 {% if result%}
                 <div class="results">
                     <p>The word {{result.word}} occurs {{result.frequency}} time{{result.plural}} in {{phraseDisplay}}</p>

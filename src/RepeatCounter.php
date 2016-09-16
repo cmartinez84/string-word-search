@@ -50,7 +50,7 @@
                     $eachWordOnce[$phraseWord] += "1";
                 }
             }
-            return $eachWordOnce["and"];
+            return $eachWordOnce;
         }
     }
  ?>

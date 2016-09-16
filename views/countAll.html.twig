@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Word Frequency</title>
+    </head>
+    <body>
+        <ul>
+        {% for key, word in result%}
+        <li>{{key}}: {{word}}</li>
+        {% endfor %}
+        </ul>
+
+    </body>
+</html>
