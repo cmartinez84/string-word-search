@@ -22,6 +22,15 @@
 
            $this->assertEquals(1, $result);
        }
+       function test_countRepeats_capitalization(){
+           $test_countRepeats = new RepeatCounter;
+           $phrase = "And so we beat on";
+           $input_word = "and";
+
+           $result = $test_countRepeats->CountRepeats($phrase, $input_word);
+
+           $this->assertEquals(1, $result);
+       }
 
    }
  ?>
