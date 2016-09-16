@@ -7,7 +7,7 @@
     <body>
         <div class="container">
             <div class="well">
-                <form class="" action="index.html" method="post">
+                <form class="" action="/result" method="post">
                     <label for="">Phrase:</label>
                     <input type="text" name="input_phrase" value="">
                     <label for="">Word:</label>
@@ -18,7 +18,7 @@
         </div>
         {% if result%}
         <div class="results">
-            <p>The word{{result.input_word}} occurs {{result.frequency}} time{{result.plural}} in the phrase {{result.input_phrase}}</p>
+            <p>The word {{result.word}} occurs {{result.frequency}} time{{result.plural}} in the phrase "{{result.phrase}}""</p>
         </div>
         {% endif %}
     </body>
