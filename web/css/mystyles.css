@@ -4,9 +4,23 @@
 .well{
 
     margin:  0 auto;
-        margin-top: 20%;
     max-width: 600px;
 }
+
 .radio-group{
         display: block;
+}
+.allWordResults{
+    width: 50%;
+    height: 400px;
+    overflow: scroll;
+}
+h1{
+    font-family: 'Ubuntu', sans-serif;
+}
+p, button, label, input{
+    font-family: 'Lato', sans-serif;
+}
+h1{
+    text-align: center;
 }
