@@ -1,43 +1,52 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Word Frequency</title>
-    </head>
-    <body>
-        <div class="container">
-            <div class="well">
-                <h1>Word Frequeny</h1>
-                <p>Find out how many times a word occurs in a given phrase. You may enter your own phrase, or preselect from a list of famous passages</p>
-                <form class="" action="/result" method="post">
-                    <label for="">Word:</label>
-                    <input type="text" name="input_word">
-
-                    <div class="form-group">
-                        <label for="">Phrase:</label>
-                        <input type="text" name="input_phrase" placeholder="Enter Your Own Phrase">
-                        <label for="">Or Choose from the following:</label>
-                        <input type="radio" name="input_phrase" value="option">Hamlet's Soliliquy</input>
-                        <input type="radio" name="input_phrase" value="option2">Obama's Second Inaugural Address</input>
-                        <input type="radio" name="input_phrase" value="option3">"You can't handle the truth" speech</input>
-                        <input type="radio" name="input_phrase" value="option4">"I Wandered Lonely as a Cloud"-Wordsworth</input>
-                    </div>
-                    <button type="submit" name="button">Search</button>
-                </form>
-                <form class="" action="/countAll" method="post">
-                    <input type="radio" name="phrase" value="option">Hamlet's Soliliquy</input>
-                    <input type="radio" name="phrase" value="option2">Obama's Second Inaugural Address</input>
-                    <input type="radio" name="phrase" value="option3">"You can't handle the truth" speech</input>
-                    <input type="radio" name="phrase" value="option4">"I Wandered Lonely as a Cloud"-Wordsworth</input>
-                    <button type="submit" name="button">Count em All</button>
-                </form>
-                {% if result%}
-                <div class="results">
-                    <p>The word {{result.word}} occurs {{result.frequency}} time{{result.plural}} in {{phraseDisplay}}</p>
-                </div>
-                {% endif %}
+  <head>
+    <meta charset="utf-8">
+    <title>Word Frequency</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="well">
+        <h1>Word Frequeny</h1>
+        <p>Find out how many times a word occurs in a given phrase. You may enter your own phrase, or preselect from a list of famous passages</p>
+        <form class="" action="/result" method="post">
+          <label for="">Word:</label>
+          <input type="text" name="input_word">
+          <div class="form-group" data-toggle="buttons">
+            <div class="radio-group">
+              <label for="">Phrase:</label>
+              <input type="text" name="input_phrase" placeholder="Enter Your Own Phrase">
             </div>
+            <div class="form-group btn-group  data-toggle="buttons"">
+              <label for="">Or Choose from the following:</label>
+              <div class="radio-group"><input type="radio" name="input_phrase" value="option">Hamlet's Soliliquy</input></div>
+              <div class="radio-group"><input type="radio" name="input_phrase" value="option2">Obama's Second Inaugural Address</input></div>
+              <div class="radio-group"><input type="radio" name="input_phrase" value="option3">"You can't handle the truth" speech</input></div>
+              <div class="radio-group"><input type="radio" name="input_phrase" value="option4">"I Wandered Lonely as a Cloud"</input></div>
+            </div>
+          </div>
+          <button class="btn btn-success" type="submit" name="button">submit</button>
+        </form>
+        <h1>Run a Complete Word Count</h1>
+        <p>This search will run a complete word count, giving back the frequency of every word, and total word count, and longest word:</p>
+        <form class="" action="/countAll" method="post">
+          <div class="radio-group"><label for="">Phrase:</label>
+            <input type="text" name="input_phrase" placeholder="Enter Your Own Phrase">
+          </div>
+          <label for="">Or Choose from the following:</label>
+          <div class="radio-group"><input type="radio" name="phrase" value="option">Hamlet's Soliliquy</input></div>
+          <div class="radio-group"><input type="radio" name="phrase" value="option2">Obama's Second Inaugural Address</input></div>
+          <div class="radio-group"><input type="radio" name="phrase" value="option3">"You can't handle the truth" speech</input></div>
+          <div class="radio-group"><input type="radio" name="phrase" value="option4">"I Wandered Lonely as a Cloud"-Wordsworth</input></div>
+          <button class="btn btn-success" type="submit" name="button">submit</button>
+        </form>
+        {% if result%}
+        <div class="results">
+          <h1>Results</h1>
+          <p>The word {{result.word}} occurs {{result.frequency}} time{{result.plural}} in {{phraseDisplay}}</p>
         </div>
-
-    </body>
+        {% endif %}
+      </div>
+    </div>
+  </body>
 </html>

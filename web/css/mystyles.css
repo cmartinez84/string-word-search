@@ -7,3 +7,6 @@
         margin-top: 20%;
     max-width: 600px;
 }
+.radio-group{
+        display: block;
+}

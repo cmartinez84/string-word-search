@@ -43,7 +43,7 @@
             $phrase = strtolower(strtr($phrase,".,:;?!-\'\"$%@#^*({})][]\\/<> +=_", "                                "));
             $wordArray = explode(" ", $phrase);
             foreach ($wordArray as $phraseWord) {
-                if(array_key_exists($phraseWord, $eachWordOnce)==false){
+                if(array_key_exists($phraseWord, $eachWordOnce)==false ||(empty($phraseWord))){
                     $eachWordOnce[$phraseWord] = "1";
                 }
                 elseif(array_key_exists($phraseWord, $eachWordOnce) == true){
