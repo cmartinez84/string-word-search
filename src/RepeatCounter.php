@@ -11,7 +11,7 @@
             $this->word = $word;
             $phrase = strtr($phrase,".,:;?!-\'\"$%@#^*({})][]\\/<> +=_", "                                ");
             $phrase = strtolower($phrase);
-            $word = strtolower($word);
+            $word = trim(strtolower($word));
             $result = 0;
             $phraseArray = explode(" ", $phrase);
             $result = 0;

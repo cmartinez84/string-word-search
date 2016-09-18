@@ -24,6 +24,12 @@
               <div class="radio-group"><input type="radio" name="input_phrase" value="option3">"You can't handle the truth" speech</input></div>
               <div class="radio-group"><input type="radio" name="input_phrase" value="option4">"I Wandered Lonely as a Cloud"</input></div>
             </div>
+            {% if result%}
+            <div class="results">
+              <h1>Results</h1>
+              <p>The word {{result.word}} occurs {{result.frequency}} time{{result.plural}} in {{phraseDisplay}}</p>
+            </div>
+            {% endif %}
           </div>
           <button class="btn btn-success" type="submit" name="button">submit</button>
         </form>
@@ -40,12 +46,6 @@
           <div class="radio-group"><input type="radio" name="phrase" value="option4">"I Wandered Lonely as a Cloud"-Wordsworth</input></div>
           <button class="btn btn-success" type="submit" name="button">submit</button>
         </form>
-        {% if result%}
-        <div class="results">
-          <h1>Results</h1>
-          <p>The word {{result.word}} occurs {{result.frequency}} time{{result.plural}} in {{phraseDisplay}}</p>
-        </div>
-        {% endif %}
       </div>
     </div>
   </body>
