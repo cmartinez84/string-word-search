@@ -9,11 +9,13 @@
         function CountRepeats($phrase, $word){
             $this->phrase = $phrase;
             $this->word = $word;
-            $phrase = strtr($phrase,".,:;?!-\'\"$%@#^*({})][]\\/<> +=_", "                                ");
-            $phrase = strtolower($phrase);
             $word = trim(strtolower($word));
-            $result = 0;
+            $phrase = strtr($phrase,".,:;?!-\$%@#^*({})][]\\/<> +=_", "                                ");
+            $phrase = strtolower($phrase);
             $phraseArray = explode(" ", $phrase);
+            foreach($phraseArray as $index => $word){
+                $phraseArray[$index] =  trim($word, "' \"");
+            }
             $result = 0;
             foreach($phraseArray as $phraseWord){
                 if ($word == $phraseWord){
@@ -40,14 +42,17 @@
         }
         function countAllWords($phrase){
             $eachWordOnce = array();
-            $phrase = strtolower(strtr($phrase,".,:;?!-\'\"$%@#^*({})][]\\/<> +=_", "                                "));
+            $phrase = strtolower(strtr($phrase,".,:;?!-\$%@#^*({})][]\\/<> +=_", "                                "));
             $wordArray = explode(" ", $phrase);
+            foreach($wordArray as $index => $word){
+                $wordArray[$index] =  trim($word, "' \"");
+            }
             foreach ($wordArray as $phraseWord) {
                 if(array_key_exists($phraseWord, $eachWordOnce)==false ||(empty($phraseWord))){
-                    $eachWordOnce[$phraseWord] = "1";
+                    $eachWordOnce[$phraseWord] = 1;
                 }
                 elseif(array_key_exists($phraseWord, $eachWordOnce) == true){
-                    $eachWordOnce[$phraseWord] += "1";
+                    $eachWordOnce[$phraseWord] += 1;
                 }
             }
             arsort($eachWordOnce);
