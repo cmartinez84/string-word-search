@@ -32,8 +32,8 @@
         $newRepeatCounter = new RepeatCounter;
         $newData = new Data;
         $input_phrase = $newData->getData($_POST['phrase']);
-        $result = $newRepeatCounter->countAllWords($input_phrase);
-        return $app['twig']->render('countAll.html.twig', array('result' => $result));
+        $newRepeatCounter->countAllWords($input_phrase);
+        return $app['twig']->render('countAll.html.twig', array('result' => $newRepeatCounter->eachWordOnce));
     });
 
     return $app;
