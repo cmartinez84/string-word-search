@@ -22,12 +22,14 @@
             $phrase = strtr($phrase,".,:;?!-\$%@#^*({})][]\\/<> +=_", "                                ");
             $phrase = strtolower($phrase);
             $phraseArray = explode(" ", $phrase);
+
             foreach($phraseArray as $index => $word){
                 $phraseArray[$index] =  trim($word, "' \"");
             }
             $result = 0;
+
             foreach($phraseArray as $phraseWord){
-                if ($word == $phraseWord){
+                if ($this->word == $phraseWord){
                     $result += 1;
                 }
             }
