@@ -1,6 +1,8 @@
 
 <?php
     require_once "src/RepeatCounter.php";
+    require_once "src/Data.php";
+
 
    class RepeatCounterTest extends PHPUnit_Framework_TestCase
    {
@@ -49,15 +51,15 @@
 
            $this->assertEquals(1, $result);
        }
-       function test_countAllWords(){
+       function test_analyzeReadability(){
            $test_countAllWords = new RepeatCounter;
-           $phrase = "and and and the the the";
+           $newData = new Data;
+           $phrase = $newData->option2;
 
-           $allWordsArray = $test_countAllWords->countAllWords($phrase);
-           $result = $allWordsArray["and"];
+           $test_countAllWords->analyzeReadability($phrase);
+           $result = $test_countAllWords->readability;
 
-
-           $this->assertEquals(3 , $result);
+           $this->assertEquals(8 , $result);
        }
    }
  ?>

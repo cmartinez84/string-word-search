@@ -8,12 +8,22 @@
         <div class="container">
             <div class="well">
                 <h1>And here are the results</h1>
-                <div class="allWordResults">
+                <div class=" col-xs-6 allWordResults">
                     <ul>
-                    {% for word, key in result%}
+                    {% for word, key in result.eachWordOnce%}
                     <li>{{word}}: {{key}}</li>
                     {% endfor %}
                     </ul>
+                </div>
+                <div class="col-xs-6">
+                    Seperating the 100 most common English words, the most top ten most frequently used words in {{phraseDisplay}} are:
+                    <ul>{% for word in result.mostUniqueWordsArray %}
+                        <li>{{word}}</li>
+                        {% endfor %}
+                    </ul>
+                    <p> Using the <a href="https://en.wikipedia.org/wiki/Automated_readability_index">Automatic Readability Index(ARI)</a> for this passage is <span class="stats">{{result.readability}}</span></p>
+                    <p>Total Word Count: <span class ="stats">{{result.totalWord}}</span></p>
+                    <p>Average Sentence Length: <span class="stats"> {{result.averageSentenceLength}}</span></p>
                 </div>
 
             </div>

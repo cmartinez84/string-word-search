@@ -123,14 +123,18 @@
             And then my heart with pleasure fills,
             And dances with the daffodils. ";
         public $titlesArray = array("option1"=>"Hamlet's Soliliquy", "option2"=> "Obama's second Inagural Address", "option3"=>"Jack Nicholson's famous 'You Can't Handle the Truth' monologue", "option4" => "Woodsworth's poem'I Wandered Lonely as a cloud'");
-        function getData($phrase){
+        function getData($phrase, $compact){
             if(substr($phrase, 0, 6)=="option"){
                 $this->phraseDisplay = $this->titlesArray[$phrase];
                 return $this->$phrase;
             }
-            else{
+            elseif($compact=="full"){
                 $this->phraseDisplay = "the phrase \"" . $phrase. "\"";
                 return $phrase ;
+            }
+            elseif($compact == "compact"){
+                $this->phraseDisplay = "your entry";
+                return $phrase;
             }
         }
 

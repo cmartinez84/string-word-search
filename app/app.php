@@ -23,7 +23,7 @@
     $app->post("/result", function() use ($app) {
         $newRepeatCounter = new RepeatCounter;
         $newData = new Data;
-        $input = $newData->getData($_POST['input_phrase']);
+        $input = $newData->getData($_POST['input_phrase'], "full");
         $newRepeatCounter->CountRepeats($input, $_POST['input_word']);
         return $app['twig']->render('home.html.twig', array('result' => $newRepeatCounter, 'phraseDisplay'=> $newData->phraseDisplay));
     });
@@ -31,9 +31,10 @@
     $app->post("/countAll", function() use ($app) {
         $newRepeatCounter = new RepeatCounter;
         $newData = new Data;
-        $input_phrase = $newData->getData($_POST['phrase']);
+        $input_phrase = $newData->getData($_POST['phrase'], "compact");
         $newRepeatCounter->countAllWords($input_phrase);
-        return $app['twig']->render('countAll.html.twig', array('result' => $newRepeatCounter->eachWordOnce));
+        $newRepeatCounter->analyzeReadability($input_phrase);
+        return $app['twig']->render('countAll.html.twig', array('result' => $newRepeatCounter, 'phraseDisplay' => $newData->phraseDisplay));
     });
 
     return $app;
