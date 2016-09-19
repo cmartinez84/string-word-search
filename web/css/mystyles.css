@@ -5,6 +5,9 @@
 
     margin:  0 auto;
     max-width: 600px;
+    background: rgba(200, 39, 44, 0.9);
+    min-height:  540px; !important;
+    border-radius: 10px;
 }
 
 .radio-group{
@@ -14,6 +17,12 @@
     width: 50%;
     height: 400px;
     overflow: scroll;
+}
+body{
+    background: url('https://huddle.eurostarsoftwaretesting.com/wp-content/uploads/2016/04/Words-2.jpg') center center no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
 }
 h1{
     font-family: 'Ubuntu', sans-serif;

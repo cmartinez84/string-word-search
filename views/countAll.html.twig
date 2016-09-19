@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Word Frequency</title>
+        <title>Full Word Analysis</title>
     </head>
     <body>
         <div class="container">
@@ -21,12 +21,13 @@
                         <li>{{word}}</li>
                         {% endfor %}
                     </ul>
-                    <p> Using the <a href="https://en.wikipedia.org/wiki/Automated_readability_index">Automatic Readability Index(ARI)</a> for this passage is <span class="stats">{{result.readability}}</span></p>
+                    <p> <a href="https://en.wikipedia.org/wiki/Automated_readability_index">Automatic Readability Index(ARI)</a>: <span class="stats">{{result.readability}}</span></p>
                     <p>Total Word Count: <span class ="stats">{{result.totalWord}}</span></p>
                     <p>Average Sentence Length: <span class="stats"> {{result.averageSentenceLength}}</span></p>
+                    <a href="/"><button class="btn btn-success" type="button" name="button">Home</button></a>
                 </div>
 
-            </div>
+     </div>
         </div>
 
 
