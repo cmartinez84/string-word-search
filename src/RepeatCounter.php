@@ -9,11 +9,11 @@
          "this", "have", "from", "or", "one", "had", "by", "word", "but", "not", "what", "all", "were", "we", "when", "your", "can", "said", "there", "use", "an", "each", "which", "she", "do",
           "how", "their", "if", "will", "up", "there", "about", "out", "many", "then", "them", "these", "so", "some", "her", "would", "make", "like", "him", "into", "time", "has", "look", "two", "more", "write", "go", "see", "number", "no", "way", "could", "people", "my", "than", "first", "water", "been", "call", "who", "oil", "its", "now", "find", "long", "down", "day", "did", "get", "come",
           "made", "may", "part", "i");
-        public $eachWordOnce = array();
-        public $mostUniqueWordsArray = array();
-        public $readability;
-        public $totalWord;
-        public $averageSentenceLength;
+        private $eachWordOnce = array();
+        private $mostUniqueWordsArray = array();
+        private $readability;
+        private $totalWord;
+        private $averageSentenceLength;
 
           function CountRepeats($phrase, $word){
             $this->phrase = $phrase;
@@ -37,18 +37,7 @@
             }
             return $result;
         }
-        function getPhrase(){
-            return $this->phrase;
-        }
-        function getWord(){
-            return $this->word;
-        }
-        function getfrequency(){
-            return $this->frequency;
-        }
-        function getplural(){
-            return $this->plural;
-        }
+
         function countAllWords($phrase){
             $phrase = strtolower(strtr($phrase,".,:;?!-\$%@#^*({})][]\\/<> +=_", "                                "));
             $wordArray = explode(" ", $phrase);
@@ -81,5 +70,32 @@
             $this->readability =round(4.71 *($totalCharacters/$totalWord)+.5*($totalWord/$totalSentences)   -21.43);
             $this->averageSentenceLength = $totalWord/$totalSentences;
         }
+        function getPhrase(){
+            return $this->phrase;
+        }
+        function getWord(){
+            return $this->word;
+        }
+        function getfrequency(){
+            return $this->frequency;
+        }
+        function getplural(){
+            return $this->plural;
+        }
+        function getEachWordOnce(){
+            return $this->eachWordOnce;
+        }
+       function getmostUniqueWordsArray(){
+           return $this->mostUniqueWordsArray;
+       }
+       function getreadability(){
+           return $this->readability;
+       }
+       function gettotalWord(){
+           return $this->totalWord;
+       }
+       function getaverageSentenceLength(){
+           return $this->averageSentenceLength;
+       }
     }
  ?>

@@ -24,6 +24,9 @@ body{
     background-size: cover;
     color: white;
 }
+input{
+    color: black;
+}
 h1{
     font-family: 'Ubuntu', sans-serif;
 }
